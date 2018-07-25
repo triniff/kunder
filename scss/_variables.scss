@@ -1,0 +1,25 @@
+$gris-oscuro: #474747;
+$gris-medio: #C5C5C5;
+$gris-claro-texto: #999999;
+$gris-oscuro-texto: #666565;
+$gris-menu-lateral: #EEEEEE;
+$blanco: #ffff;
+$borde: #c5c5c545;
+
+%parrafo-playfair{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: $gris-oscuro-texto;
+}
+%parrafo-roboto-medium{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+}
+%parrafo-roboto-ligth{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; 
+}
+%parrafo-roboto-bold{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500; 
+}

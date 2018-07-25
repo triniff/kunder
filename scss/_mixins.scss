@@ -1,0 +1,23 @@
+@mixin icon {
+    display: flex;
+    align-items: center;
+    .icon{
+        width: 29px;
+        height: 29px;
+        background-color: $gris-oscuro;
+        border-radius: 100%;
+        display: inline-flex;
+        margin-right: 20px;
+        img{
+            width: 70%;
+            margin: 5px;
+        }
+    }
+}
+@mixin imagen-perfil-lista {
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    background-position: top;
+    background-size: 100px;
+}

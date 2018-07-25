@@ -1,0 +1,452 @@
+@import './variables';
+@import './mixins';
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+header{
+    .menu-principal{
+        width: calc(100% - 312px);
+        height: 66px;
+        background-color: $gris-oscuro;
+        position: absolute;
+        right: 0px;
+        display: flex;
+        justify-content: flex-end;
+        ul{
+            text-align: right;
+            display: flex;
+            align-self: center;
+            align-items: center;
+            li{
+                display: inline-block;
+                a{
+                    color: aliceblue;
+                    text-decoration: none;
+                    @include icon;
+                }
+            }
+        }
+        .img-perfil{
+            width: 44px;
+            height: 44px;
+            background: url("../img/adult-beach-beard-736716.jpg");
+            border-radius: 100%;
+            background-size: 100px;
+            background-position: center; 
+        }
+    }
+    .menu-lateral{
+        width: 312px;
+        height: 150vh;
+        background-color: $gris-menu-lateral;
+        position: absolute;
+        ul{
+            text-align: left;
+            margin-top: 40px;
+            li{
+                //padding: 24px 0px;
+                a{
+                    color: $gris-oscuro;
+                    text-decoration: none;
+                    font-size: 18px;
+                    @extend %parrafo-roboto-ligth;
+                    @include icon;
+                    padding: 24px 40px;
+                    &:hover{
+                        background-color: $gris-medio;
+                    }
+                }
+            }
+        }
+        .bienvenida-usuario{
+            padding: 40px;
+            h5{
+                font-size: 18px;
+                @extend %parrafo-roboto-ligth;
+                color: $gris-oscuro-texto;
+                padding-bottom: 5px;
+            }
+            h4{
+                font-size: 24px;
+                @extend %parrafo-playfair;
+                padding-bottom: 8px;
+            }
+            p{
+                font-size: 12px;
+                @extend %parrafo-roboto-ligth;
+                color: $gris-claro-texto;
+            }
+            border-bottom: 1px solid $borde;
+        }
+    }
+}
+
+.contenedor-contenido{
+    width: calc(100% - 312px);
+    position: absolute;
+    right: 0px;
+    top: 66px;
+    padding: 5%;
+    box-sizing: border-box;
+    .dashboard{
+        h2{
+            @extend %parrafo-playfair;
+            font-size: 48px;
+        }
+        .stast-dashboard{
+            box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            background-color: $blanco;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 22%;
+            margin: 0 auto;
+            margin: 100px 10px;
+            h3, p{
+                font-size: 14px;
+                text-align: center;
+                @extend %parrafo-roboto-ligth;
+                color: $gris-oscuro-texto !important;
+                padding: 20px 0px;
+            }
+            h5{
+                font-size: 64px;
+                text-align: center;
+                color: $gris-oscuro !important;
+                @extend %parrafo-roboto-bold;
+            }
+        }
+    }
+    .lista-ultimos-empleados{
+        display: inline-flex;
+        flex-direction: column;
+        width: 69%;;
+        h4{
+            @extend %parrafo-roboto-ligth;
+            font-size: 18px;
+            color: $gris-oscuro;
+            margin-bottom: 40px;
+        }
+        .empleado{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid $borde;
+            padding: 12px;
+            @extend %parrafo-roboto-ligth;
+            color: $gris-oscuro;
+            align-items: center;
+            .ocupacion, .fecha-creacion{
+                width: 100px;
+            }
+            .nombre{
+                width: 120px;
+            }
+            .imagen-perfil-recorte-1{
+                background: url("../img/rawpixel-675358-unsplash.jpg");
+                @include  imagen-perfil-lista;
+            }
+            .imagen-perfil-recorte-2{
+                background: url("../img/brooke-cagle-193476-unsplash.jpg");
+                @include  imagen-perfil-lista;
+                background-position: center;
+                background-size: 150px;
+            }
+            .imagen-perfil-recorte-3{
+                background: url("../img/maria-fernanda-gonzalez-569256-unsplash.jpg");
+                @include  imagen-perfil-lista;
+                background-position: center;
+                background-size: 50px;
+            }
+            .imagen-perfil-recorte-4{
+                background: url("../img/wade-austin-ellis-703508-unsplash.jpg");
+                @include  imagen-perfil-lista;
+            }
+            .imagen-perfil-recorte-5{
+                background: url("../img/foto-sushi-128246-unsplash.jpg");
+                @include  imagen-perfil-lista;
+                background-position: bottom;
+                background-size: 80px;
+            }
+            .titulo{
+                font-size: 10px;
+                padding-bottom: 5px;
+            }
+            .nombre{
+                p{
+                    padding-top: 5px;
+                }
+            }
+            .detalles{
+                position: relative;
+                text-align: right;
+                img{
+                    width: 20px;
+                }
+                ul{
+                    background-color: #ffff;
+                    position: absolute;
+                    right: 0px;
+                    top: 0px;
+                    width: 164px;
+                    padding: 24px 0px;
+                    height: 110px;
+                    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
+                    li{
+                        padding: 12px 24px;
+                        text-align: left;
+                        &:hover{
+                            background-color: $gris-menu-lateral;
+                        }
+                    }
+                }
+                .menu{
+                    display: none;
+                }
+                .open{
+                    .menu{
+                        display: block;
+                        z-index: 9999;
+                    }
+                }
+            }
+        }
+    }
+    .lista-tareas{
+        width: 27%;
+        margin-left: 24px;
+        display: inline-flex;
+        flex-direction: column;
+        height: 420px;
+        background-color: $blanco;
+        box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
+        h4{
+            @extend %parrafo-roboto-ligth;
+            font-size: 18px;
+            padding: 30px;
+        }
+        .tareas{
+            @include icon;
+            ul{
+                width: 100%;
+                li{
+                    padding: 20px 30px;
+                    border-bottom: 1px solid $borde;
+                    &:hover{
+                        background-color: $gris-menu-lateral;
+                    }
+                    a{
+                        @extend %parrafo-roboto-medium;
+                        font-size: 12px;
+                        text-decoration: none;
+                        color: $gris-oscuro;
+                        display: flex;
+                        align-items: center;
+                        p{
+                            display: inline-flex;
+                            margin-top: -10px;
+                        }
+                        span{
+                            @extend %parrafo-roboto-ligth;
+                            position: absolute;
+                            margin-top: 10px;
+                            margin-left: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//Responsive
+.contenedor-menu-hamburguesa{
+    display: none;
+    padding: 12px 12px 4px 12px;
+    .burger-menu {
+        position: relative;
+        width: 32px;;
+        height: 50px;
+        cursor: pointer;
+    }
+    .burger {
+        position: absolute;
+        background: $blanco;
+        width: 100%;
+        height: 3px;
+        top: 50%;
+        right: 0px;
+        margin-top: -5px;
+        opacity: 1;
+        z-index: 9999999;
+    }
+    .burger::before {
+        position: absolute;
+        background: $blanco;
+        width: 32px;
+        height: 3px;
+        top: 13px;
+        content: "";
+        display: block;
+    }
+    .burger::after {
+        position: absolute;
+        background: $blanco;
+        width: 32px;
+        height: 3px;
+        bottom: 13px;
+        content: "";
+        display: block;
+    }
+    .burger::after, .burger::before, .burger {
+        transition: all .3s ease-in-out;
+        -webkit-transition: all .3s ease-in-out;
+    }
+    .burger-menu.menu-on .burger::after{
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        bottom: 0px;
+        left: 250px;
+        background: $gris-claro-texto;
+    }
+    .burger-menu.menu-on .burger::before{
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        top: 0px;
+        left: 250px;
+        background: $gris-claro-texto;
+    }
+    .burger-menu.menu-on .burger{
+        background: rgba(111,111,111,.0);
+    }
+}
+
+
+@media (max-width: 1200px){
+    .menu-lateral{
+        display: none;
+        top: 0px;
+    }
+    .contenedor-contenido, .menu-principal{
+        width: 100% !important;
+    }
+    .open-menu-lateral{
+        display: block;
+        z-index: 1;
+    }
+    .contenedor-menu-hamburguesa{
+        display: block;
+    }
+    @media (max-width: 980px) {
+        .lista-tareas, .lista-ultimos-empleados{
+            width: 100% !important;
+            margin-left: 0px !important;
+            display: block !important;
+        }
+        .lista-tareas{
+            height: auto !important;
+            margin-top: 40px;
+            ul{
+                li{
+                    display: inline-block;
+                    width: 41%;
+                    box-sizing: border-box;
+                }
+            }
+        }
+        @media (max-width: 855px) {
+            .lista-ultimos-empleados{
+                margin-top: 40px;
+            }
+            .dashboard{
+                h2{
+                    padding-bottom: 30px;
+                }
+                .stast-dashboard{
+                    width: 45% !important;
+                    margin: 0 auto !important;
+                    margin: 10px !important;
+                    box-sizing: border-box;
+                }
+            }
+            @media (max-width: 700px) {
+                .lista-ultimos-empleados{
+                    .fecha-creacion, .ocupacion{
+                        display: none;
+                    }
+                    .nombre{
+                        position: absolute;
+                        left: 120px;
+                    }
+                }
+                @media (max-width: 500px) {
+                    .menu-lateral{
+                        width: 250px !important;
+                    }
+                    .lista-tareas{
+                        ul{
+                            li{
+                                display: block;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .dashboard {
+                        .stast-dashboard{
+                            padding: 12px !important;
+                            width: 100% !important;
+                            margin:10px 0px !important;
+                        }
+                    }
+                    .burger-menu.menu-on .burger::after, .burger-menu.menu-on .burger::before{
+                        left: 180px !important;
+                    }
+                }
+            }
+        }
+    }
+}
